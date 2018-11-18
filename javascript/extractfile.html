@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mapreducefilter</title>
+	<style>
+	 li{
+			width:200px;
+			list-style-type: none;
+			float:left;
+			
+			padding:10px;
+			
+		}
+		ul::after,ul::before{
+			content:'';
+			display: block;
+			clear:both;
+		}
+	
+	</style>
+	</head>
+	<body>
+	<ul>
+	<li class="fname"></li>
+	<li id="lname"></li>
+	</ul>
+	<script src="data.js"></script>
+	<script>
+	
+	var obj = [];
+	var obj1=[];
+	
+var fn=document.createElement('li');
+var ln=document.createElement('li');
+ln.setAttribute("id", "lname");
+document.getElementsByTagName('li')[0].appendChild(fn);
+document.getElementsByTagName('ul')[0].appendChild(ln);
+for(var j=0;j<data.length;j++){
+     var arr = [];
+	arr.push(data[j].firstName);
+    obj.push(arr);
+    obj.toString;	
+	 var arr1 = [];
+	arr1.push(data[j].lastName);
+    obj1.push(arr1);
+    obj1.toString;
+	
+//	var arr2 = [];
+	//var obj2=[];
+	//arr2.push(data[j].orders);
+	//obj2.push(arr2);
+	//obj2.toString;
+ //alert(arr2);
+  var list_name=document.createElement('li');
+  list_name.setAttribute("class" , "fname");
+  list_name.innerHTML=obj[j];
+  fn.appendChild(list_name);
+  
+   var list_name1=document.createElement('li');
+  list_name1.setAttribute("id" , "lname");
+  list_name1.innerHTML=obj1[j];
+  ln.appendChild(list_name1);
+}
+	</script>
+	</body>
+	</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title> Form </title>
+<style>
+td{
+
+
+}
+
+</style>
+</head>
+<body>
+<form >
+<h1> Personal Information </h1>
+First Name <input type="text" name="fname" size=19 id="f1">
+Last Name <input type="text" name="fname" size=19 id="l1"><br><br>
+
+E-mail:
+  <input type="email" name="email" id="email_id"><br><br>
+<div id="gender_value">
+Gender <input type="radio" name="gender" value="male"  id="m"> Male
+  <input type="radio" name="gender" value="female" id="f" > Female<br><br>  </div>
+  Hobbies: <input type="checkbox" name="hobbies1" > Singing 
+  <input type="checkbox" name="hobbies2" > dancing 
+  <input type="checkbox" name="hobbies3"  > Shopping<br><br>
+  <input type="button" value="submit" onclick="submit_button()">
+  <br>
+  <br>
+
+ <table>
+ <tr>
+ <td id="input_dataname" ></td>
+ </tr>
+ <tr>
+  <td id="email_id1" ></td>
+  </tr>
+  <tr>
+  <td id="Gender_" ></td>
+  </tr>
+  </table>
+
+  
+  
+  
+  <script>
+  function submit_button() {
+  var f1=document.getElementById("f1").value;
+  var l2=  document.getElementById("l1").value;
+  var final1=" <h1> Personal Information </h1><br> Name: "+f1+" "+l2;
+  document.getElementById("input_dataname").innerHTML=final1;
+  var e1=document.getElementById("email_id").value;
+ var e2="Email id :"+e1;
+  document.getElementById("email_id1").innerHTML=e2;
+  var g=document.getElementsByName("gender");
+  var g1;
+  if(g == 'male'){
+  g1 =  document.getElementById('m').value;
+  }
+ else
+ {
+ g1= document.getElementById('f').value;
+ }
+  document.getElementById('Gender_').innerHTML = g1;}
+  </script>
+  
+</form>
+</body>
+</html>
