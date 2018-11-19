@@ -15,14 +15,23 @@ td{
 First Name <input type="text" name="fname" size=19 id="f1">
 Last Name <input type="text" name="fname" size=19 id="l1"><br><br>
 
-E-mail:
+E-mail Id:
   <input type="email" name="email" id="email_id"><br><br>
-<div id="gender_value">
-Gender <input type="radio" name="gender" value="male"  id="m"> Male
-  <input type="radio" name="gender" value="female" id="f" > Female<br><br>  </div>
-  Hobbies: <input type="checkbox" name="hobbies1" > Singing 
-  <input type="checkbox" name="hobbies2" > dancing 
-  <input type="checkbox" name="hobbies3"  > Shopping<br><br>
+
+Gender <input type="radio" name="gender" value="male"  id="m" > Male
+  <input type="radio" name="gender" value="female" id="f" > Female<br><br>  
+  
+  
+  Hobbies: <input type="checkbox" name="hobbies1" id="hb1" > Singing 
+  <input type="checkbox" name="hobbies2" id="hb2" > dancing 
+  <input type="checkbox" name="hobbies3"  id="hb3"  > Shopping<br><br>
+  
+  select Language  : <select name="Language"  id="Language" multiple="multiple">
+  <option value="English" id="lan2" >English</option>
+  <option value="Punjabi" id="lan3" >Punjabi</option>
+  <option value="Telgue" id="lan4" >Telgue</option>
+    <option value="Gujarti" id="lan5">Gujarti</option>
+</select><br><br>
   <input type="button" value="submit" onclick="submit_button()">
   <br>
   <br>
@@ -36,6 +45,12 @@ Gender <input type="radio" name="gender" value="male"  id="m"> Male
   </tr>
   <tr>
   <td id="Gender_" ></td>
+  </tr>
+   <tr>
+  <td id="checkboxsection" ></td>
+  </tr>
+    <tr>
+  <td id="selectsection" > </td>
   </tr>
   </table>
 
@@ -51,16 +66,47 @@ Gender <input type="radio" name="gender" value="male"  id="m"> Male
   var e1=document.getElementById("email_id").value;
  var e2="Email id :"+e1;
   document.getElementById("email_id1").innerHTML=e2;
-  var g=document.getElementsByName("gender");
-  var g1;
-  if(g == 'male'){
-  g1 =  document.getElementById('m').value;
-  }
- else
- {
- g1= document.getElementById('f').value;
- }
-  document.getElementById('Gender_').innerHTML = g1;}
+ 
+  
+        var inputRadio = document.getElementById('m').checked;
+		var inputRadio1 = document.getElementById('f').checked;
+		var checkboxinput = document.getElementById("hb1").checked;
+		var checkboxinput1 = document.getElementById("hb2").checked;
+		var checkboxinput2 = document.getElementById("hb3").checked;
+       
+		if (inputRadio == true && inputRadio1 == false)
+		{
+	
+		document.getElementById("Gender_").innerHTML=" Gender : Male";
+		}
+		else if (inputRadio == false && inputRadio1 == true)
+		{
+		
+			document.getElementById("Gender_").innerHTML=" Gender : FeMale";
+		}
+		if(checkboxinput == true)
+		{
+		document.getElementById("checkboxsection").innerHTML="  Singing  ";
+		}
+	   if(checkboxinput1 == true)
+		{
+		document.getElementById("checkboxsection").innerHTML +="  Dancing  ";
+		}
+		 if(checkboxinput2 == true)
+		{
+		document.getElementById("checkboxsection").innerHTML += "  Shopping ";
+		}
+/*for(var i=0; i<Language.length; i++)
+	{	var x = document.getElementById("Language").value;
+    document.getElementById("selectsection").innerHTML +=x;}
+		
+ }*/
+
+
+ var x = document.getElementById("Language").value;
+    document.getElementById("selectsection").innerHTML +=x;
+	
+	}
   </script>
   
 </form>
