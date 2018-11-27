@@ -1,0 +1,101 @@
+<html>
+<head>
+<title> shopping cart </title>
+<style>
+
+img {
+height:250px;
+margin-left:50px;
+width:300px;
+}
+button{
+margin-left:150px;
+width:70px;
+height:40px;
+padding:10px;
+background-color:#FB641B;
+}
+td{
+
+width:180px;
+}
+#table{
+opacity:0;}
+</style>
+</head>
+<body>
+
+<img src="bed.jpeg"><br><br>     <span id="demo"></span>
+<button onclick="show_details()" id="details"> Details </button>
+<br>
+<div id="table">
+<table id="mytable">
+<tr >
+<td> BED </td>
+<td ALIGN="right" id="v">  king-size bed </TD>
+</TR>
+<tr >
+<td> Color </td>
+<td ALIGN="right" id="v1"> Dark Brown </TD>
+</TR>
+<tr >
+<td> SIZE </td>
+<td ALIGN="right" id="v2"> 360 sq ft (33 sq m) </TD>
+</TR>
+<tr >
+<td> Material </td>
+<td ALIGN="right" id="v3">  Wood </TD>
+</TR><br>
+</TABLE>
+<span style="margin-left:1px;"> <button onclick="order_done()"> ORDER</button> </span>
+</div>
+<button onclick="update()" id="up">UPDATE </button>
+<script>
+document.getElementById('up').style.opacity = '0';
+var first_row="";
+var second_row ="";
+var third_row = "";
+var information;
+function show_details()
+{ document.getElementById('table').style.opacity = '1';
+  document.getElementById('details').style.opacity = '0'; 
+}
+function order_done()
+{
+alert("Order Confirm");
+       for(i=0;i<2;i++)
+       {
+       first_row+=document.getElementById("mytable").rows[0].cells[i].innerHTML;
+      }
+	  for(i=0;i<2;i++)
+       {
+       second_row+=document.getElementById("mytable").rows[1].cells[i].innerHTML;
+      }
+	  for(i=0;i<2;i++)
+       {
+       third_row+=document.getElementById("mytable").rows[2].cells[i].innerHTML;
+      }
+	  information=first_row + '<br>' +second_row +'<br>' +third_row;
+	   document.getElementById('table').style.opacity = '0';
+	  document.getElementById("demo").innerHTML=information;
+	  document.getElementById('up').style.opacity = '1';
+}
+
+
+
+//function Bed(type,color,size,material){
+	//this.bed_type = type;
+	//this.bed_color = color;
+	//this.bed_size = size;
+	//this.bed_material = materail;
+	
+//}
+
+
+
+
+
+
+</script>
+</body>
+</html>
