@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer</title>
+
+    <style>
+        .container {
+            width: 300px;
+            margin-left:50px;
+			border:1px solid black;
+        }
+             
+    </style>
+    <script src="data.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+        var details = document.createElement('div');
+       document.body.appendChild(details);
+      details.setAttribute('class', 'container');
+        for (var i = 0; i < data.length; i++) {
+            var customer = document.createElement('div');
+            details.appendChild(customer);
+			 var fn = document.createElement('p');
+            fn.innerHTML =i+1+") "+ data[i].firstName+" "+data[i].lastName;
+            customer.appendChild(fn);
+			
+            for (var j = 0; j < data[i].orders.length; j++) {
+			   var pname= document.createElement('span');
+			  pname.innerHTML = " "+data[i].orders[j].productName;   
+			  customer.appendChild(pname);
+				var icost= document.createElement('span');
+                icost.innerHTML = " "+data[i].orders[j].itemCost;
+		       customer.appendChild(icost);
+
+            }
+			}
+				var k,l;
+				var total_cost=0;
+		for(k=0; k<data.length;k++){
+		for(l=0;i<3;l++){
+		      
+                total_cost += data[k].orders[l].itemCost;}
+				//alert(total_cost);
+				}
+			//	alert(data[0].orders[1].itemCost);
+			</script>		
+</body>
+</html>
