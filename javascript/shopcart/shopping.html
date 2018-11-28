@@ -1,0 +1,42 @@
+<html>
+<head>
+<title> shopping cart </title>
+</head>
+<body>
+
+<form name="myform">
+<select  onchange="typeof_furniture()" name="furniture" id="furniture">
+<option value="0"> Home & Furniture </option>
+<option value="1">  Bed    </option>
+<option value="2"> Table </option>
+<option value="3"> Chair </option>
+</select>
+</form>
+<script type="text/javascript">
+function typeof_furniture()
+{
+	var furniture_select=document.myform.furniture.value;
+if(furniture_select==1)
+{
+
+location.href="bed.html";
+}
+
+else if(furniture_select==2)
+{
+
+location.href="https://in.yahoo.com/";
+}
+
+else if(furniture_select==3)
+{
+
+location.href="https://www.youtube.com/";
+}
+
+	
+}
+
+</script>
+</body>
+</html>
