@@ -1,0 +1,68 @@
+		<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		label{
+			width:100px;
+			display: inline-block;
+		}
+		:invalid{
+			border:2px dashed red;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<div>
+			<label>Username</label><input type="text" name="username">
+		</div>
+		<div>
+			<label>Email</label><input type="email" name="email">
+		</div>
+		<button onclick="loadDoc()">Save</button><br><br>
+		<p id="demo"> </p>
+	</form>
+<script type="text/javascript">
+
+var xhr = new XMLHttpRequest();
+ 	function open(url){
+		return new Promise(function(resolve,reject){
+			var xhr = new XMLHttpRequest();
+			xhr.open('get',url, true);
+	
+ 			xhr.onload = function(){
+		
+			}
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					
+					resolve(xhr.response);
+				}else if(xhr.status !== 200){
+				console.log("sorry");
+					reject(0);
+				}
+			}
+			xhr.send(null);		
+		});
+		
+	}
+
+	var promise = open('bed.html');
+	promise.then(function(val){
+		document.getElementById("demo").innerHTML=val;
+		
+	})
+  var promise1=open('https://jsonplaceholder.typicode.com/albums');
+		
+		promise1.then(function(val){
+		console.log(val);
+		
+	})
+	
+
+
+	
+</script>
+</body>
+</html> 
