@@ -1,0 +1,31 @@
+<br>
+
+<p>
+  customer card-----
+</p>
+<!--<div>
+  <ul>
+    <li *ngFor="let item of customer">
+      {{item.id}} -- {{item.firstName}}
+    </li>
+ </ul>
+</div>--->
+
+<div class="container" *ngIf ="!!customer">
+  <div class="row" >
+    <div class="col-sm-4" *ngFor="let item of customer" >
+      <div class="card">
+        <div class="card-header">
+          <br>
+          <p (click)="onClick(item.id)">{{item.firstName | uppercase }} {{item.lastName | uppercase}}</p>
+          <a [routerLink] = "['/customers',item.id,'edit']">  Edit</a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">Gender {{item.gender}}</p>
+          <a class="btn btn-primary" [routerLink]="['/customers',item.id,'orders']" >View Orders</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
